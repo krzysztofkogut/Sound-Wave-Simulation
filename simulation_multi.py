@@ -22,14 +22,19 @@ radius = 1 * scale
 max_pressure = initial_P / 2
 min_presure = -initial_P / 2
 
-
-class Simulation:
+class Simulation2:
     def __init__(self):
         self.frame = 0
+        self.scale = 50
+        self.damping = 0.99
+        self.vertPos1 = size_y - 2 * self.scale
+        self.horizPos1 = 2 * self.scale
+        self.vertPos2 = size_y - 2 * self.scale
+        self.horizPos2 = 4 * self.scale
         self.pressure = [[0.0 for x in range(size_x)] for y in range(size_y)]
-        # outflow velocities from each cell
         self._velocities = [[[0.0, 0.0, 0.0, 0.0] for x in range(size_x)] for y in range(size_y)]
-        self.pressure[vertPos][horizPos] = initial_P
+        self.pressure[self.vertPos1][self.horizPos1] = initial_P
+        self.pressure[self.vertPos2][self.horizPos2] = initial_P
 
     def updateV(self):
         """Recalculate outflow velocities from every cell basing on preassure difference with each neighbour"""
@@ -49,10 +54,11 @@ class Simulation:
     def updateP(self):
         for i in range(size_y):
             for j in range(size_x):
-                self.pressure[i][j] -= 0.5 * damping * sum(self._velocities[i][j])
+                self.pressure[i][j] -= 0.5 * self.damping * sum(self._velocities[i][j])
 
     def step(self):
-        self.pressure[vertPos][horizPos] = initial_P * sin(omega * self.frame)
+        self.pressure[self.vertPos1][self.horizPos1] = initial_P * sin(omega * self.frame)
+        self.pressure[self.vertPos2][self.horizPos2] = initial_P * sin(omega * self.frame)
         self.updateV()
         self.updateP()
         self.frame += 1
@@ -60,15 +66,12 @@ class Simulation:
 
 argc = len(sys.argv)
 if argc > 1 and sys.argv[1] == '1':
-	vertPos = size_y - 3 * scale
-	horizPos = 1 * scale
-	wall = [[1 if x == wall_x_pos and wallTop < y < size_y else 0
+    wall = [[1 if x == wall_x_pos and wallTop < y < size_y else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '2':
-	vertPos = size_y - 3 * scale
-	horizPos = 1 * scale
-	wall = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
+
+    wall = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
                   (wall_x_pos - scale < x < wall_x_pos and
                    x - wall_x_pos == y - wallTop - scale - 1) or
                   (wall_x_pos < x < wall_x_pos + scale and
@@ -77,9 +80,7 @@ elif argc > 1 and sys.argv[1] == '2':
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '3':
-	vertPos = size_y - 3 * scale
-	horizPos = 1 * scale
-	wall = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
+    wall = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
                   (wall_x_pos - scale < x < wall_x_pos and
                    x - wall_x_pos == y - wallTop - scale - 1) or
                   (wall_x_pos < x < wall_x_pos + scale and
@@ -89,33 +90,27 @@ elif argc > 1 and sys.argv[1] == '3':
                   (wall_x_pos + scale / 2 < x < wall_x_pos + 0.75 * scale and
                    x - wall_x_pos == y - wallTop + scale / 2 - 1)
              else 0
-for x in range(size_x)] for y in range(size_y)]
+             for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '4':
-	vertPos = size_y - 2 * scale
-	horizPos = 1 * scale
-	wall = [[1 if (x == wall_x_pos1 and wallTop1 < y < size_y) or (x == wall_x_pos2 and wallTop2 < y < size_y) else 0
+    wall = [[1 if (x == wall_x_pos1 and wallTop1 < y < size_y) or (x == wall_x_pos2 and wallTop2 < y < size_y) else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '5':
-	vertPos = size_y - 2 * scale
-	horizPos = 3 * scale
-	wall = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (wallTop1 >= y >= wallTop2 and x == wall_x_pos2)) else 0
-		for x in range(size_x)] for y in range(size_y)]
+    wall = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (
+                wallTop1 >= y >= wallTop2 and x == wall_x_pos2)) else 0
+             for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '6':
-	vertPos = size_y - 2 * scale
-	horizPos = 3 * scale
-	wall = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (wallTop1 >= y >= wallTop2 and (x == wall_x_pos1 or x == wall_x_pos2))) else 0
-		for x in range(size_x)] for y in range(size_y)]
+    wall = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (
+                wallTop1 >= y >= wallTop2 and (x == wall_x_pos1 or x == wall_x_pos2))) else 0
+             for x in range(size_x)] for y in range(size_y)]
 
-else:
-	vertPos = size_y - 2 * scale
-	horizPos = 3 * scale
-	wall = [[1 if (2.5 * scale <= x <= 3 * scale and y == 2.5 * scale) or 
-			(3 * scale <= x <= 3.5 * scale and y == 2 * scale) or 
-			(2.5 * scale >= y >= 2 * scale and x == 3 * scale) or
-			(2 * scale >= y >= 1.5 * scale and x == 3.5 * scale) else 0
-		for x in range(size_x)] for y in range(size_y)]
-	"""wall = [[1 if ((x-circle_x_centre)**2 + (y-circle_y_centre)**2 == radius**2)  else 0
-		for x in range(size_x)] for y in range(size_y)]"""
+elif argc > 1 and sys.argv[1] == '7':
+    wall = [[1 if (2.5 * scale <= x <= 3 * scale and y == 2.5 * scale) or
+                  (3 * scale <= x <= 3.5 * scale and y == 2 * scale) or
+                  (2.5 * scale >= y >= 2 * scale and x == 3 * scale) or
+                  (2 * scale >= y >= 1.5 * scale and x == 3.5 * scale) else 0
+             for x in range(size_x)] for y in range(size_y)]
+elif argc > 1 and sys.argv[1] == '8':
+    wall = [[0 for x in range(size_x)] for y in range(size_y)]
