@@ -1,0 +1,61 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\author{KG, KK, PP}
+
+\title{Rozprzestrzenianie siê fali dŸwiêkowej po pomieszczeniu}
+
+\author{Kacper Gawroñski \and Krzysztof Kogut \and Pawe³ Peroñczyk \\
+		\small Informatyka, II rok \\
+		\small Rok akademicki 2018/19 \\
+		}
+
+\begin{document}
+\maketitle
+
+\section{Wprowadzenie do tematu}
+
+Rozchodzenie siê dŸwiêku w pomieszczeniu zale¿y od jego wymiarów i kszta³tu oraz od struktury powierzchni ograniczaj¹cej pomieszczenia, jak te¿ od w³aœciwoœci akustycznych przedmiotów w niej siê znajduj¹cych (co pomijamy z uwagi na potrzeby symulacji). Wymienione czynniki maj¹ wp³yw na prêdkoœæ zanikania energii dŸwiêkowej w pomieszczeniu, co z kolei wp³ywa w sposób zasadniczy na wartoœæ poziomu dŸwiêku w nim panuj¹cego. \\
+
+Fale dŸwiêkowe rozchodz¹ce siê w pomieszczeniach natrafiaj¹c na przeszkody mog¹ siê od nich odbiæ. Te odbicia mog¹ mieæ charakter lustrzany (k¹t padania jest równy k¹towi odbicia) lub te¿ ³¹czyæ siê z rozproszeniem dŸwiêku (fala padaj¹ca pod okreœlonym k¹tem jest odbijana we wszystkich kierunkach). To, jaki charakter bêdzie mia³o odbicie zale¿y od relacji miêdzy d³ugoœci¹ fali a rozmiarami elementów rozpraszaj¹cych. W praktyce, ze wzglêdu na du¿y zakres d³ugoœci fal dŸwiêkowych (w zale¿noœci od czêstotliwoœci od 1,7 mm do 17 m), zwykle mamy do czynienia z odbiciem mieszanym – sk³adowe dŸwiêku o pewnych czêstotliwoœciach ulegaj¹ odbiciu z rozproszeniem a inne odbiciu lustrzanemu. \\
+
+Podczas rozchodzenia siê dŸwiêku w powietrzu nastêpuj¹ lokalne zmiany ciœnienia, polegaj¹ce na odchyleniach powy¿ej i poni¿ej normalnego ciœnienia atmosferycznego, czyli œciœniêciach i rozprê¿enia cz¹steczek powietrza. Zwyk³e zmiany ciœnienia atmosferycznego, np. zwi¹zane z pogod¹ lub wysokoœci¹, s¹ zbyt powolne, aby s³uch ludzki postrzega³ je jako dŸwiêki. Czêstotliwoœci poni¿ej oko³o 16-20 cykli na sekundê, czyli herców (1 Hz=1/s), s¹ dla cz³owieka nies³yszalne, choæ czasem ucho na nie reaguje. Te czêstotliwoœci to tzw. infradŸwiêki. Zakres czêstotliwoœci od oko³o 20 do oko³o 20000 Hz to czêstotliwoœci s³yszalne dla cz³owieka. Dok³adny zakres s³yszalnoœci jest ró¿ny dla ró¿nych osób. Czêstotliwoœci z zakresu s³yszalnoœci s¹ postrzegane jako dŸwiêk, maj¹cy okreœlon¹ wysokoœæ, czy te¿ charakter tonalny albo szumowy. Czêstotliwoœci powy¿ej 20 kHz nazywamy ultradŸwiêkami. \\
+
+Fala dŸwiêkowa wychodz¹ca ze Ÿród³a dŸwiêku s³abnie wraz ze wzrostem pokonanej odleg³oœci od Ÿród³a. Os³abienie to zale¿y od w³aœciwoœci kierunkowych Ÿród³a i od œrodowiska, w którym ta fala siê rozchodzi. Gdy Ÿród³o dŸwiêku jest ma³e w porównaniu z d³ugoœci¹ promieniowanej fali, dŸwiêk rozchodzi siê na zewn¹trz w formie sfery o promieniu rosn¹cym wraz z oddalaniem siê od Ÿród³a. Poniewa¿ energia dŸwiêku jest rozprowadzana równomiernie na powierzchni sfery, intensywnoœæ dŸwiêku jest proporcjonalna do odleg³oœci od Ÿród³a zgodnie z zale¿noœci¹:
+
+\begin{center}
+$\frac{I_{1}}{I_{2}} = \frac{r_{2}^{2}}{r_{1}^{2}}$
+\end{center}
+
+gdzie $r_{1}, r_{2}$ - odleg³oœci od Ÿród³a dŸwiêku, $I_{1}, I_{2}$ - intensywnoœæ dŸwiêku w odleg³oœci odpowiednio: $r_{1}$ i $r_{2}$. Odpowiada to zmniejszeniu poziomu o 6 dB przy podwojeniu odleg³oœci. \\
+
+Wynika to z niezak³óconego, przestrzennego rozproszenia energii dŸwiêkowej. We wnêtrzach jest nieco inaczej. Poziom dŸwiêku opada w podobnym tempie w najbli¿szym otoczeniu Ÿród³a, tam gdzie dominuje dŸwiêk bezpoœredni tego Ÿród³a (czyli w tzw. polu bezpoœrednim). Pozosta³a przestrzeñ w pomieszczeniu jest tzw. polem pog³osowym, gdzie dominuj¹ dŸwiêki odbite. Poziom dŸwiêku w polu pog³osowym wszêdzie jest taki sam lub bardzo zbli¿ony. St¹d zanik przestrzenny dŸwiêku w pomieszczeniach jest zwykle du¿o s³abszy ni¿ w przestrzeni otwartej. \\
+
+
+\section{Przegl¹d literatury}
+
+Istnieje wiele mo¿liwoœci badania rozchodzenia siê fal dŸwiêkowych. Pocz¹wszy od rzeczywistych przyrz¹dów stworzonych w celach naukowych do generowania dŸwiêku, przez przedmioty codziennego u¿ytku, a¿ po aplikacje internetowe lub na telefon. \\
+
+Jednym ze sposobów mierzenia rozchodzenia siê dŸwiêku jest wykorzystanie obrabiarki \footnote{\textit{Badania w³asnoœci obrabiarek i stosowane kryteria oceny} dr in¿ Wac³aw Skoczyñski, Przegl¹d Mechaniczny, 2003} generuj¹cej dŸwiêk o du¿ym natê¿eniu. Umieszczona w pomieszczeniu, w którym znajduje siê swobodne pole akustyczne, a w³asnoœci akustyczne pod³o¿a s¹ jednakowe (lub bardzo zbli¿one) na powierzchni ograniczonej po³o¿eniem punktów pomiarowych i pozwalaj¹cych traktowanie ich jako odbijaj¹cych ha³as. Punkty pomiarowe s¹ rozmieszczone na powierzchniach prostopad³oœcianu, którego œciany otaczaj¹ obrabiarkê (lub tê jej czêœæ, któr¹ mo¿na uznaæ za g³ówne Ÿród³o dŸwiêku) w odleg³oœci 1 - 1,5 m. W ka¿dym punkcie pomiarowym ustawiamy mikrofon bezpoœrednio w stronê Ÿród³a dŸwiêku i wykonujemy pomiar. \\
+
+W dzisiejszych czasach mamy jednak do czynienia w wiêkszoœci z aplikacjami internetowymi lub na telefony komórkowe, które s³u¿¹ do pomiaru dŸwiêku. \footnote{\textit{Miernik dŸwiêku (Sound Meter)} Abc Apps} Aplikacja \textit{Sound Meter} wykorzystuje mikrofony w urz¹dzeniach z systemem Android do wychwytywania dŸwiêku z otoczenia i mierzenia jego natê¿enia. Miernik ten mo¿e byæ wykorzystany podczas badania postawionego wy¿ej problemu rozchodzenia siê fali dŸwiêkowej. Wystarczy obraæ konkretn¹ odleg³oœæ Ÿród³a dŸwiêku od telefonu z aplikacj¹. Trzeba jednak dopilnowaæ, aby na drodze fali dŸwiêkowej, któr¹ zamierzamy wys³aæ nie pojawi³a siê ¿adna przeszkoda - doprowadzi ona do zniekszta³cenia fali i b³êdnych wyników. Trzeba wzi¹æ pod uwagê fakt, ¿e mikrofony dostêpne w urz¹dzeniach komórkowych s¹ ograniczone i dostosowane do natê¿enia dŸwiêku o wartoœci 0 - 100 dB. Ka¿da wartoœæ wychodz¹ca poza ten przedzia³ nie bêdzie rozpoznana i nie otrzymamy po¿¹danego wyniku. \\
+
+Istnieje równie¿ wiele symulatorów akustycznych pomieszczeñ \footnote{\textit{Soundtracing w grach komputerowych} Bugiel P. Kraków, 2013}, wykorzystuj¹cych program MATLAB. Pozwala to na bardzo dok³adne zasymulowanie zjawiska wraz z czynnikami takimi jak poch³anianie dŸwiêku przez atmosferê \footnote{\textit{Wibroakustyka stosowana.} Cempel C. Warszawa, PWN 1989}, pokrycie materia³em pod³ogi pomieszczenia, czy spadek ciœnienia wraz z odleg³oœci¹ od Ÿród³a \footnote{\textit{DŸwiêki i fale.} Makarewicz R. Poznañ, Wydawnictwo Naukowe UAM 2004}. Gotowy symulator generuje odpowiedzi impulsowe pomieszczenia bior¹c pod uwagê najwa¿niejsze zjawiska zachodz¹ce w czasie propagacji dŸwiêku. Ograniczeniem w tych symulacjach jest czêstotliwoœæ próbkowania, która musi byæ taka sama lub bardzo zbli¿ona do tej zadanej jako argument symulatora. \\
+
+\section{Proponowany model}
+
+Wykorzystaliœmy zasadê dzia³ania automatów komórkowych \footnote{\textit{Visualization of sound propagation and scattering in rooms} Takatoshi Yokota, Shinichi Sakamoto, Hideki Tachibana}. Symulacja propagacji fali dŸwiêkowej przeprowadzona zosta³a poprzez stany komórek oraz ich interakcjê z s¹siednimi komórkami. Ka¿da komórka stanowi osobny obiekt, a atrybuty kolejno oddalonych od Ÿród³a komórek s¹ obliczane na podstawie poprzedników - po to aby pomiary by³y obarczone jak najmniejszym b³êdem zwi¹zanym z ich predykcj¹ u Ÿród³a dŸwiêku. 
+
+\section{Symulacja zjawiska}
+
+\section{Wyniki symulacji}
+
+\section{Wnioski}
+
+\section{Bibliografia}
+
+
+
+\end{document}
