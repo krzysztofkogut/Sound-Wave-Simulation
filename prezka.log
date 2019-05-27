@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.24)  25 MAY 2019 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.24)  27 MAY 2019 11:23
 entering extended mode
 **./prezka.tex
 (prezka.tex
@@ -224,22 +224,7 @@ LaTeX Font Info:    External font `plex10' loaded for size
 LaTeX Font Info:    Try loading font information for U+lasy on input line 16.
  ("C:\Users\paper\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-[1
+) [1
 
 {C:/Users/paper/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    External font `plex10' loaded for size
@@ -249,64 +234,63 @@ LaTeX Font Info:    External font `plex10' loaded for size
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <6> on input line 29.
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
 
  []
 
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <5> on input line 41.
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 39--47
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
 
  []
 
+[3]
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 62.
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
+("C:\Users\paper\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.fd"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+) [4]
+Overfull \hbox (42.25021pt too wide) in paragraph at lines 95--95
+[]    \OT4/cmtt/m/n/12 self.pressure[i][j] -= 0.5 * damping * sum(self._velocit
+ies[i][j])[] 
  []
 
-[3] [4] (prezka.aux) ) 
+[5] (prezka.aux) ) 
 Here is how much of TeX's memory you used:
- 1729 strings out of 492895
- 26136 string characters out of 3123735
- 89210 words of memory out of 3000000
- 5609 multiletter control sequences out of 15000+200000
- 16040 words of font info for 50 fonts, out of 3000000 for 9000
+ 1749 strings out of 492895
+ 26544 string characters out of 3123735
+ 92210 words of memory out of 3000000
+ 5625 multiletter control sequences out of 15000+200000
+ 16337 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,1009b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/pl/plit.enc}{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/en
-c/dvips/pl/plrm.enc}{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/pl/plmi.enc}<C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/pl/plbx12.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/pl/plmi12.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/pl/plmi8.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/pl/plr10.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/paper/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/paper/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/pl/plr6.pfb><C:/Users/paper/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Users/paper/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/paper/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Users/paper/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
-Output written on prezka.pdf (4 pages, 92300 bytes).
+ 41i,8n,25p,1006b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
+vips/pl/pltt.enc}{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
+ips/pl/plit.enc}{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
+ps/pl/plrm.enc}{C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/pl/plmi.enc}<C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/pl/plbx12.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/pl/plmi12.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/pl/plmi8.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/pl/plr10.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/pl/plr12.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/pl/plr17.pfb><C:/Users/paper/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/pl/plr6.pfb><C:/Users/paper/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Users/paper/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/paper/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Users/paper/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/paper/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/pl/pltt12.pfb>
+Output written on prezka.pdf (5 pages, 105598 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
