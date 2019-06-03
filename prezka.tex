@@ -69,23 +69,23 @@ for i in range(size_y):
     if wall[i][j] == 1:
       V[i][j][0] = V[i][j][1] = V[i][j][2] = V[i][j][3] = 0.0
       continue
-    cell_pressure = P[i][j]
+    cellPressure = P[i][j]
 		
     if i > 0 
-      V[i][j][0] = V[i][j][0] + cell_pressure - P[i - 1][j] 
-    else cell_pressure
+      V[i][j][0] = V[i][j][0] + cellPressure - P[i - 1][j] 
+    else cellPressure
 		
     if j < size_x - 1 
-      V[i][j][1] = V[i][j][1] + cell_pressure - P[i][j + 1] 
-    else cell_pressure
+      V[i][j][1] = V[i][j][1] + cellPressure - P[i][j + 1] 
+    else cellPressure
 
     if i < size_y - 1 
-      V[i][j][2] = V[i][j][2] + cell_pressure - P[i + 1][j]
-    else cell_pressure
+      V[i][j][2] = V[i][j][2] + cellPressure - P[i + 1][j]
+    else cellPressure
 		
     if j > 0 
-      V[i][j][3] = V[i][j][3] + cell_pressure - P[i][j - 1]  
-    else cell_pressure
+      V[i][j][3] = V[i][j][3] + cellPressure - P[i][j - 1]  
+    else cellPressure
 \end{verbatim}
 
 Nastêpnie symulujemy ju¿ przep³yw, czyli aktualizujemy ciœnienie bior¹c pod uwagê równie¿ prêdkoœæ wyp³ywu powietrza(outflow velocity):
@@ -94,7 +94,7 @@ Nastêpnie symulujemy ju¿ przep³yw, czyli aktualizujemy ciœnienie bior¹c pod uwag
 for i in range(size_y):
   for j in range(size_x):
 
-    self.pressure[i][j] -= 0.5 * damping * sum(self._velocities[i][j])
+    self.pressure[i][j] -= 0.5 * damping * sum(self.velocities[i][j])
 \end{verbatim}
 
 ¯eby przeprowadziæ symulacjê nale¿y ustawiæ poni¿sze parametry: 
@@ -123,13 +123,13 @@ python main.py [wall_option] [single | multi]
 python main.py [-h | --help]
 \end{verbatim}
 
-\hspace{1.5cm} w celu uzyskania pomocy
+\hspace{1.5cm} w celu uzyskania pomocy \\
 
 
 
 \section{Wyniki symulacji}
 
-Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji. \\
+Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji.
 
 \newpage
 
