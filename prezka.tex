@@ -69,23 +69,23 @@ for i in range(size_y):
     if wall[i][j] == 1:
       V[i][j][0] = V[i][j][1] = V[i][j][2] = V[i][j][3] = 0.0
       continue
-    cell_press = P[i][j]
+    cell_pressure = P[i][j]
 		
     if i > 0 
-      V[i][j][0] = V[i][j][0] + cell_press - P[i - 1][j] 
-    else cell_press
+      V[i][j][0] = V[i][j][0] + cell_pressure - P[i - 1][j] 
+    else cell_pressure
 		
     if j < size_x - 1 
-      V[i][j][1] = V[i][j][1] + cell_press - P[i][j + 1] 
-    else cell_press
+      V[i][j][1] = V[i][j][1] + cell_pressure - P[i][j + 1] 
+    else cell_pressure
 
     if i < size_y - 1 
-      V[i][j][2] = V[i][j][2] + cell_press - P[i + 1][j]
-    else cell_press
+      V[i][j][2] = V[i][j][2] + cell_pressure - P[i + 1][j]
+    else cell_pressure
 		
     if j > 0 
-      V[i][j][3] = V[i][j][3] + cell_press - P[i][j - 1]  
-    else cell_press
+      V[i][j][3] = V[i][j][3] + cell_pressure - P[i][j - 1]  
+    else cell_pressure
 \end{verbatim}
 
 Nastêpnie symulujemy ju¿ przep³yw, czyli aktualizujemy ciœnienie bior¹c pod uwagê równie¿ prêdkoœæ wyp³ywu powietrza(outflow velocity):
@@ -101,20 +101,38 @@ for i in range(size_y):
 \begin{itemize}
 \item scale(skala)
 \item damping(t³umienie)
-\item omega(???)
-\item initialP(ciœnienie)
-\item vertPos(wspó³rzêdna Y Ÿród³a)
-\item horizPos(wspó³rzêdna X Ÿród³a)\\
+\item omega(parametr u¿ywany przy obliczaniu falowego sygna³u Ÿród³a)
+\item startPressure(ciœnienie pocz¹tkowe)
+\item yPosition(wspó³rzêdna Y Ÿród³a)
+\item xPosition(wspó³rzêdna X Ÿród³a)\\
 \end{itemize}
 
 Nastêpnie w wywo³aæ przy pomocy poni¿szego kodu w linii komend: \\
-KOD DO WYWO£ANIA W TERMINALU
+
+\begin{verbatim}
+python main.py [wall_option] [single | multi]
+\end{verbatim}
+
+\hspace{1.5cm} gdzie: \textbf{wall\_option} -- oznacza liczbê 1--7 (single) lub 1--8 (multi)
+
+\begin{center}
+\emph{lub}
+\end{center}
+
+\begin{verbatim}
+python main.py [-h | --help]
+\end{verbatim}
+
+\hspace{1.5cm} w celu uzyskania pomocy
+
+
 
 \section{Wyniki symulacji}
 
 Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji. \\
 
 \newpage
+
 
 \begin{figure}
 \includegraphics[scale=0.43]{no1.png}
@@ -135,6 +153,13 @@ Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji. \\
 \includegraphics[scale=0.43]{no4.png}
 \caption{Dwa Ÿród³a fal dŸwiêkowych nachodz¹cych na siebie}
 \end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.55]{no5.png}
+\caption{Zjawisko dyfrakcji(ugiêcia) fali dŸwiêkowej zachodz¹ce przy przejœciu przez szczelinê}
+\end{figure}
+
+
 
 \begin{figure}
 \section{Wnioski}
