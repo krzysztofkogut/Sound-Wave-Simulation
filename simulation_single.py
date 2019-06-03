@@ -32,7 +32,12 @@ class Simulation:
         self.pressure[yPosition][xPosition] = startPressure
 
     def updateV(self):
+<<<<<<< HEAD
         V = self.velocities
+=======
+        #"Recalculate outflow velocities from every cell basing on preassure difference with each neighbour"
+        V = self._velocities
+>>>>>>> cfed3417b22123c22772ec7a6faa401f128bf4e0
         P = self.pressure
         for i in range(size_y):
             for j in range(size_x):

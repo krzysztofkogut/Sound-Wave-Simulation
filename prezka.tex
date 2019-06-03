@@ -1,0 +1,139 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\author{KG, KK, PP}
+
+\title{Rozprzestrzenianie siê fali dŸwiêkowej po pomieszczeniu}
+
+\author{Kacper Gawroñski \and Krzysztof Kogut \and Pawe³ Peroñczyk \\
+		\small Informatyka, II rok \\
+		\small Rok akademicki 2018/19 \\
+		}
+
+\begin{document}
+\maketitle
+
+\section{Wprowadzenie do tematu}
+
+Rozchodzenie siê dŸwiêku w pomieszczeniu zale¿y od jego wymiarów i kszta³tu oraz od struktury powierzchni ograniczaj¹cej pomieszczenia, jak te¿ od w³aœciwoœci akustycznych przedmiotów w niej siê znajduj¹cych (co pomijamy z uwagi na potrzeby symulacji). Wymienione czynniki maj¹ wp³yw na prêdkoœæ zanikania energii dŸwiêkowej w pomieszczeniu, co z kolei wp³ywa w sposób zasadniczy na wartoœæ poziomu dŸwiêku w nim panuj¹cego. 
+\\ \\
+Fale dŸwiêkowe rozchodz¹ce siê w pomieszczeniach natrafiaj¹c na przeszkody mog¹ siê od nich odbiæ. Te odbicia mog¹ mieæ charakter lustrzany (k¹t padania jest równy k¹towi odbicia) lub te¿ ³¹czyæ siê z rozproszeniem dŸwiêku (fala padaj¹ca pod okreœlonym k¹tem jest odbijana we wszystkich kierunkach). To, jaki charakter bêdzie mia³o odbicie zale¿y od relacji miêdzy d³ugoœci¹ fali a rozmiarami elementów rozpraszaj¹cych. W praktyce, ze wzglêdu na du¿y zakres d³ugoœci fal dŸwiêkowych (w zale¿noœci od czêstotliwoœci od 1,7 mm do 17 m), zwykle mamy do czynienia z odbiciem mieszanym – sk³adowe dŸwiêku o pewnych czêstotliwoœciach ulegaj¹ odbiciu z rozproszeniem a inne odbiciu lustrzanemu. 
+\\ \\
+Podczas rozchodzenia siê dŸwiêku w powietrzu nastêpuj¹ lokalne zmiany ciœnienia, polegaj¹ce na odchyleniach powy¿ej i poni¿ej normalnego ciœnienia atmosferycznego, czyli œciœniêciach i rozprê¿enia cz¹steczek powietrza. Zwyk³e zmiany ciœnienia atmosferycznego, np. zwi¹zane z pogod¹ lub wysokoœci¹, s¹ zbyt powolne, aby s³uch ludzki postrzega³ je jako dŸwiêki. Czêstotliwoœci poni¿ej oko³o 16-20 cykli na sekundê, czyli herców (1 Hz=1/s), s¹ dla cz³owieka nies³yszalne, choæ czasem ucho na nie reaguje. Te czêstotliwoœci to tzw. infradŸwiêki. Zakres czêstotliwoœci od oko³o 20 do oko³o 20000 Hz to czêstotliwoœci s³yszalne dla cz³owieka. Dok³adny zakres s³yszalnoœci jest ró¿ny dla ró¿nych osób. Czêstotliwoœci z zakresu s³yszalnoœci s¹ postrzegane jako dŸwiêk, maj¹cy okreœlon¹ wysokoœæ, czy te¿ charakter tonalny albo szumowy. Czêstotliwoœci powy¿ej 20 kHz nazywamy ultradŸwiêkami. 
+\\ \\
+Fala dŸwiêkowa wychodz¹ca ze Ÿród³a dŸwiêku s³abnie wraz ze wzrostem pokonanej odleg³oœci od Ÿród³a. Os³abienie to zale¿y od w³aœciwoœci kierunkowych Ÿród³a i od œrodowiska, w którym ta fala siê rozchodzi. Gdy Ÿród³o dŸwiêku jest ma³e w porównaniu z d³ugoœci¹ promieniowanej fali, dŸwiêk rozchodzi siê na zewn¹trz w formie sfery o promieniu rosn¹cym wraz z oddalaniem siê od Ÿród³a. Poniewa¿ energia dŸwiêku jest rozprowadzana równomiernie na powierzchni sfery, intensywnoœæ dŸwiêku jest proporcjonalna do odleg³oœci od Ÿród³a zgodnie z zale¿noœci¹:
+
+\begin{center}
+$\frac{I_{1}}{I_{2}} = \frac{r_{2}^{2}}{r_{1}^{2}}$
+\end{center}
+
+gdzie $r_{1}, r_{2}$ - odleg³oœci od Ÿród³a dŸwiêku, $I_{1}, I_{2}$ - intensywnoœæ dŸwiêku w odleg³oœci odpowiednio: $r_{1}$ i $r_{2}$. Odpowiada to zmniejszeniu poziomu o 6 dB przy podwojeniu odleg³oœci. 
+\\ \\
+Wynika to z niezak³óconego, przestrzennego rozproszenia energii dŸwiêkowej. We wnêtrzach jest nieco inaczej. Poziom dŸwiêku opada w podobnym tempie w najbli¿szym otoczeniu Ÿród³a, tam gdzie dominuje dŸwiêk bezpoœredni tego Ÿród³a (czyli w tzw. polu bezpoœrednim). Pozosta³a przestrzeñ w pomieszczeniu jest tzw. polem pog³osowym, gdzie dominuj¹ dŸwiêki odbite. Poziom dŸwiêku w polu pog³osowym wszêdzie jest taki sam lub bardzo zbli¿ony. St¹d zanik przestrzenny dŸwiêku w pomieszczeniach jest zwykle du¿o s³abszy ni¿ w przestrzeni otwartej.
+\\ \\
+
+\section{Przegl¹d literatury}
+
+Istnieje wiele mo¿liwoœci badania rozchodzenia siê fal dŸwiêkowych. Pocz¹wszy od rzeczywistych przyrz¹dów stworzonych w celach naukowych do generowania dŸwiêku, przez przedmioty codziennego u¿ytku, a¿ po aplikacje internetowe lub na telefon.
+\\ \\ 
+Jednym ze sposobów mierzenia rozchodzenia siê dŸwiêku jest wykorzystanie obrabiarki \footnote{\textit{Badania w³asnoœci obrabiarek i stosowane kryteria oceny} dr in¿ Wac³aw Skoczyñski, Przegl¹d Mechaniczny, 2003} generuj¹cej dŸwiêk o du¿ym natê¿eniu. Umieszczona w pomieszczeniu, w którym znajduje siê swobodne pole akustyczne, a w³asnoœci akustyczne pod³o¿a s¹ jednakowe (lub bardzo zbli¿one) na powierzchni ograniczonej po³o¿eniem punktów pomiarowych i pozwalaj¹cych traktowanie ich jako odbijaj¹cych ha³as. Punkty pomiarowe s¹ rozmieszczone na powierzchniach prostopad³oœcianu, którego œciany otaczaj¹ obrabiarkê (lub tê jej czêœæ, któr¹ mo¿na uznaæ za g³ówne Ÿród³o dŸwiêku) w odleg³oœci 1 - 1,5 m. W ka¿dym punkcie pomiarowym ustawiamy mikrofon bezpoœrednio w stronê Ÿród³a dŸwiêku i wykonujemy pomiar.
+\\ \\
+W dzisiejszych czasach mamy jednak do czynienia w wiêkszoœci z aplikacjami internetowymi lub na telefony komórkowe, które s³u¿¹ do pomiaru dŸwiêku. \footnote{\textit{Miernik dŸwiêku (Sound Meter)} Abc Apps} Aplikacja \textit{Sound Meter} wykorzystuje mikrofony w urz¹dzeniach z systemem Android do wychwytywania dŸwiêku z otoczenia i mierzenia jego natê¿enia. Miernik ten mo¿e byæ wykorzystany podczas badania postawionego wy¿ej problemu rozchodzenia siê fali dŸwiêkowej. Wystarczy obraæ konkretn¹ odleg³oœæ Ÿród³a dŸwiêku od telefonu z aplikacj¹. Trzeba jednak dopilnowaæ, aby na drodze fali dŸwiêkowej, któr¹ zamierzamy wys³aæ nie pojawi³a siê ¿adna przeszkoda - doprowadzi ona do zniekszta³cenia fali i b³êdnych wyników. Trzeba wzi¹æ pod uwagê fakt, ¿e mikrofony dostêpne w urz¹dzeniach komórkowych s¹ ograniczone i dostosowane do natê¿enia dŸwiêku o wartoœci 0 - 100 dB. Ka¿da wartoœæ wychodz¹ca poza ten przedzia³ nie bêdzie rozpoznana i nie otrzymamy po¿¹danego wyniku.
+\\ \\
+Istnieje równie¿ wiele symulatorów akustycznych pomieszczeñ \footnote{\textit{Soundtracing w grach komputerowych} Bugiel P. Kraków, 2013}, wykorzystuj¹cych œrodowisko programu MATLAB. Pozwala to na bardzo dok³adne zasymulowanie zjawiska wraz z czynnikami takimi jak poch³anianie dŸwiêku przez atmosferê \footnote{\textit{Wibroakustyka stosowana.} Cempel C. Warszawa, PWN 1989}, pokrycie materia³em pod³ogi pomieszczenia, czy spadek ciœnienia wraz z odleg³oœci¹ od Ÿród³a \footnote{\textit{DŸwiêki i fale.} Makarewicz R. Poznañ, Wydawnictwo Naukowe UAM 2004}. Gotowy symulator generuje odpowiedzi impulsowe pomieszczenia bior¹c pod uwagê najwa¿niejsze zjawiska zachodz¹ce w czasie propagacji dŸwiêku. Ograniczeniem w tych symulacjach jest czêstotliwoœæ próbkowania, która musi byæ taka sama lub bardzo zbli¿ona do tej zadanej jako argument symulatora.
+\\ \\
+W œrodowisku naukowym popularna okazuje siê byæ metoda FDTD \footnote{\textit{Application of finite difference time domain (FDTD) simulations in engineering education in optics and electrodynamic} Krawszewski M. Politechnika Gdañska, 2013}(Finite Difference Time Domain) - czyli metoda rozwi¹zywania równañ Maxwella w dziedzinie czasu za pomoc¹ ró¿nic skoñczonych. Symulacje metod¹ FDTD znalaz³y zastosowanie w omawianiu takich zagadnieñ jak rozpraszanie œwiat³a, interferencja oraz dyfrakcja fal \footnote{\textit{Efficient and Accurate Sound Propagation
+Using Adaptive Rectangular Decomposition} Nikunj Raghuvanshi, Rahul Narain, Ming C. Lin, 2009} dŸwiêkowych. Jest to prosta w implementacji metoda daj¹ca mo¿liwoœæ wizualizacji przebiegu zjawisk fizycznych zarówno tych wymienionych wczeœniej jak i wielu innych.
+\\ \\
+Innym modelem rozwi¹zania tego problemu jest metoda wymagaj¹ca zastosowania numerycznej symulacji wykorzystuj¹cej FSI(Fluid Structure Interaction) \footnote{\textit{Acoustic Intensity Imaging Methods for in-situ Wave Propagation} Stefan Weyna Zachodniopomorski Uniwersytet Technologiczny, Szczecin 2010}. Modelowanie t¹ metod¹ wymaga zarówno reprezentacji strukturalnej cieczy, tudzie¿ powietrza oraz zwi¹zków pomiêdzy cz¹steczkami. Jest to bardzo trudna metoda w zastosowaniu, wymagaj¹ca du¿ej precyzji w opisach matematycznych, jednak¿e jest to metoda daj¹ca bardzo dok³adne i zbli¿one do rzeczywistoœci wyniki. 
+\\
+
+\section{Proponowany model}
+
+W swojej symulacji wykorzystaliœmy zasadê dzia³ania automatów komórkowych \footnote{\textit{Visualization of sound propagation and scattering in rooms} Takatoshi Yokota, Shinichi Sakamoto, Hideki Tachibana}. Symulacja propagacji fali dŸwiêkowej przeprowadzona zosta³a poprzez stany komórek oraz ich interakcjê z s¹siednimi komórkami. Ka¿da komórka stanowi osobny obiekt, a atrybuty kolejno oddalonych od Ÿród³a komórek s¹ obliczane na podstawie s¹siednich komórek - po to aby pomiary by³y obarczone jak najmniejszym b³êdem zwi¹zanym z ich predykcj¹ u Ÿród³a dŸwiêku. 
+\\
+
+\section{Symulacja zjawiska}
+
+Idea operacji wykonywanych na komórkach jest bardzo prosta, ka¿da komórka zawiera informacja o obecnej wartoœci ciœnienia oraz natê¿eniu przep³ywu powietrza. W ka¿dym kolejnym kroku symulacji obliczamy nowe wartoœci ciœnienia oraz natê¿enia przep³ywu powietrza bazuj¹c na poprzednich wartoœciach.
+\\ \\
+Symulacjê przeprowadzamy w œrodowisku 2D. Pierwszym krokiem jest obliczenie pocz¹tkowego p³ywu powietrza dla wszystkich komórek - przy jednoczesnej znajomoœci ró¿nicy ciœnieñ. Obliczamy prêdkoœæ przep³ywu powietrza w ka¿dej komórce na podstawie ró¿nicy wartoœci ciœnieñ panuj¹cymi pomiêdzy komórk¹ i jej s¹siadami.
+\\ \\
+U¿ywaj¹c okreœlenia wp³yw/wyp³yw powietrza mówimy tutaj o parametrach powietrza w momencie wkraczania/wychodzenia z konkretnej komórki, czyli przep³yw powietrza, tzw. flow to przedstawienie powietrza jako okreœlonych co do wartoœci atrybutów, w tym wypadku - ciœnienie i prêdkoœæ.
+
+\begin{verbatim}
+for i in range(size_y):
+  for j in range(size_x):
+    if wall[i][j] == 1:
+      V[i][j][0] = V[i][j][1] = V[i][j][2] = V[i][j][3] = 0.0
+      continue
+    cell_press = P[i][j]
+		
+    if i > 0 
+      V[i][j][0] = V[i][j][0] + cell_press - P[i - 1][j] 
+    else cell_press
+		
+    if j < size_x - 1 
+      V[i][j][1] = V[i][j][1] + cell_press - P[i][j + 1] 
+    else cell_press
+
+    if i < size_y - 1 
+      V[i][j][2] = V[i][j][2] + cell_press - P[i + 1][j]
+    else cell_press
+		
+    if j > 0 
+      V[i][j][3] = V[i][j][3] + cell_press - P[i][j - 1]  
+    else cell_press
+\end{verbatim}
+
+Nastêpnie symulujemy ju¿ przep³yw, czyli aktualizujemy ciœnienie bior¹c pod uwagê równie¿ prêdkoœæ wyp³ywu powietrza(outflow velocity):
+
+\begin{verbatim}
+for i in range(size_y):
+  for j in range(size_x):
+
+    self.pressure[i][j] -= 0.5 * damping * sum(self._velocities[i][j])
+\end{verbatim}
+
+¯eby przeprowadziæ symulacjê nale¿y ustawiæ poni¿sze parametry: 
+\begin{itemize}
+\item scale(skala)
+\item damping(t³umienie)
+\item omega(???)
+\item initialP(ciœnienie)
+\item vertPos(wspó³rzêdna Y Ÿród³a)
+\item horizPos(wspó³rzêdna X Ÿród³a)\\
+\end{itemize}
+
+Nastêpnie w wywo³aæ przy pomocy poni¿szego kodu w linii komend: \\
+KOD DO WYWO£ANIA W TERMINALU
+
+\section{Wyniki symulacji}
+
+Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji. \\
+
+\newpage
+
+\begin{figure}
+\includegraphics[scale=0.43]{no1.png}
+\caption{Swobodne rozchodzenie siê fali z jednym Ÿród³em}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.43]{no2.png}
+\caption{Fala dŸwiêkowa ze Ÿród³em na zewn¹trz przeszkody}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.43]{no3.png}
+\caption{Fala dŸwiêkowa ze Ÿród³em wewn¹trz przeszkody}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=0.43]{no4.png}
+\caption{Dwa Ÿród³a fal dŸwiêkowych nachodz¹cych na siebie}
+\end{figure}
+
+\end{document}
