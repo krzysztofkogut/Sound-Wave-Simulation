@@ -32,12 +32,7 @@ class Simulation:
         self.pressure[yPosition][xPosition] = startPressure
 
     def updateV(self):
-<<<<<<< HEAD
         V = self.velocities
-=======
-        #"Recalculate outflow velocities from every cell basing on preassure difference with each neighbour"
-        V = self._velocities
->>>>>>> cfed3417b22123c22772ec7a6faa401f128bf4e0
         P = self.pressure
         for i in range(size_y):
             for j in range(size_x):
@@ -115,7 +110,7 @@ elif argc > 1 and sys.argv[1] == '6':
                 wallTop1 >= y >= wallTop2 and (x == wall_x_pos1 or x == wall_x_pos2))) else 0
              for x in range(size_x)] for y in range(size_y)]
 
-elif argc > 1 and sys.argv[1 == '7']:
+elif argc > 1 and sys.argv[1] == '7':
     yPosition = 2 * scale
     xPosition = 3 * scale
     wall = [[1 if (2.5 * scale <= x <= 3 * scale and y == 2.5 * scale) or
@@ -124,8 +119,14 @@ elif argc > 1 and sys.argv[1 == '7']:
                   (2 * scale >= y >= 1.5 * scale and x == 3.5 * scale) else 0
              for x in range(size_x)] for y in range(size_y)]
 
-if argc > 1 and sys.argv[1] == '8':
+elif argc > 1 and sys.argv[1] == '8':
     yPosition = 2 * scale
     xPosition = 1 * scale
     wall = [[1 if x == wall_x_pos and (0 < y < yPosition - 1 or yPosition + 1 < y < size_y) else 0
              for x in range(size_x)] for y in range(size_y)]
+
+elif argc > 1 and sys.argv[1] == '9':
+    yPosition = 2 * scale
+    xPosition = 3 * scale
+    wall = [[0 for x in range(size_x)] for y in range(size_y)]
+

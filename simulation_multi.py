@@ -112,6 +112,9 @@ elif argc > 1 and sys.argv[1] == '7':
                   (2 * scale >= y >= 1.5 * scale and x == 3.5 * scale) else 0
              for x in range(size_x)] for y in range(size_y)]
 
+elif argc > 1 and sys.argv[1] == '8':
+    wall = [[0 for x in range(size_x)] for y in range(size_y)]
+
 '''
 if argc > 1 and sys.argv[1] == '8':
     wall = [[1 if x == 3 * scale and (0 < y < yPosition - 1 or yPosition + 1 < y < size_y) else 0
