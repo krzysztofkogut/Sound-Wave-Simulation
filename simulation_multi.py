@@ -9,56 +9,55 @@ size_y = 4 * scale
 damping = 0.99
 omega = 3 / (2 * pi)
 
-initial_P = 200
-vertPos = size_y - 2 * scale
-horizPos = 3 * scale
-wallTop = size_y - 3 * scale
-wallTop1 = size_y - 1.5 * scale
-wallTop2 = size_y - 2.5 * scale
+startPressure = 200
+yPosition = 2 * scale
+xPosition = 3 * scale
+wallTop = 1 * scale
+wallTop1 = 2.5 * scale
+wallTop2 = 1.5 * scale
 wall_x_pos = 2 * scale
 wall_x_pos1 = 2.5 * scale
 wall_x_pos2 = 3.5 * scale
 radius = 1 * scale
-max_pressure = initial_P / 2
-min_presure = -initial_P / 2
+maxPressure = startPressure / 2
+minPressure = -startPressure / 2
 
 class Simulation2:
     def __init__(self):
         self.frame = 0
         self.scale = 50
         self.damping = 0.99
-        self.vertPos1 = size_y - 2 * self.scale
-        self.horizPos1 = 2 * self.scale
-        self.vertPos2 = size_y - 2 * self.scale
-        self.horizPos2 = 4 * self.scale
+        self.yPosition1 = size_y - 2 * self.scale
+        self.xPosition1 = 2 * self.scale
+        self.yPosition2 = size_y - 2 * self.scale
+        self.xPosition2 = 4 * self.scale
         self.pressure = [[0.0 for x in range(size_x)] for y in range(size_y)]
-        self._velocities = [[[0.0, 0.0, 0.0, 0.0] for x in range(size_x)] for y in range(size_y)]
-        self.pressure[self.vertPos1][self.horizPos1] = initial_P
-        self.pressure[self.vertPos2][self.horizPos2] = initial_P
+        self.velocities = [[[0.0, 0.0, 0.0, 0.0] for x in range(size_x)] for y in range(size_y)]
+        self.pressure[self.yPosition1][self.xPosition1] = startPressure
+        self.pressure[self.yPosition2][self.xPosition2] = startPressure
 
     def updateV(self):
-        """Recalculate outflow velocities from every cell basing on preassure difference with each neighbour"""
-        V = self._velocities
+        V = self.velocities
         P = self.pressure
         for i in range(size_y):
             for j in range(size_x):
                 if wall[i][j] == 1:
                     V[i][j][0] = V[i][j][1] = V[i][j][2] = V[i][j][3] = 0.0
                     continue
-                cell_pressure = P[i][j]
-                V[i][j][0] = V[i][j][0] + cell_pressure - P[i - 1][j] if i > 0 else cell_pressure
-                V[i][j][1] = V[i][j][1] + cell_pressure - P[i][j + 1] if j < size_x - 1 else cell_pressure
-                V[i][j][2] = V[i][j][2] + cell_pressure - P[i + 1][j] if i < size_y - 1 else cell_pressure
-                V[i][j][3] = V[i][j][3] + cell_pressure - P[i][j - 1] if j > 0 else cell_pressure
+                cellPressure = P[i][j]
+                V[i][j][0] = V[i][j][0] + cellPressure - P[i - 1][j] if i > 0 else cellPressure
+                V[i][j][1] = V[i][j][1] + cellPressure - P[i][j + 1] if j < size_x - 1 else cellPressure
+                V[i][j][2] = V[i][j][2] + cellPressure - P[i + 1][j] if i < size_y - 1 else cellPressure
+                V[i][j][3] = V[i][j][3] + cellPressure - P[i][j - 1] if j > 0 else cellPressure
 
     def updateP(self):
         for i in range(size_y):
             for j in range(size_x):
-                self.pressure[i][j] -= 0.5 * self.damping * sum(self._velocities[i][j])
+                self.pressure[i][j] -= 0.5 * self.damping * sum(self.velocities[i][j])
 
     def step(self):
-        self.pressure[self.vertPos1][self.horizPos1] = initial_P * sin(omega * self.frame)
-        self.pressure[self.vertPos2][self.horizPos2] = initial_P * sin(omega * self.frame)
+        self.pressure[self.yPosition1][self.xPosition1] = startPressure * sin(omega * self.frame)
+        self.pressure[self.yPosition2][self.xPosition2] = startPressure * sin(omega * self.frame)
         self.updateV()
         self.updateP()
         self.frame += 1
@@ -112,5 +111,9 @@ elif argc > 1 and sys.argv[1] == '7':
                   (2.5 * scale >= y >= 2 * scale and x == 3 * scale) or
                   (2 * scale >= y >= 1.5 * scale and x == 3.5 * scale) else 0
              for x in range(size_x)] for y in range(size_y)]
-elif argc > 1 and sys.argv[1] == '8':
-    wall = [[0 for x in range(size_x)] for y in range(size_y)]
+
+'''
+if argc > 1 and sys.argv[1] == '8':
+    wall = [[1 if x == 3 * scale and (0 < y < yPosition - 1 or yPosition + 1 < y < size_y) else 0
+             for x in range(size_x)] for y in range(size_y)]
+'''
