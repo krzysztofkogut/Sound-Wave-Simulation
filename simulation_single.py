@@ -130,3 +130,6 @@ elif argc > 1 and sys.argv[1] == '9':
     xPosition = 3 * scale
     wall = [[0 for x in range(size_x)] for y in range(size_y)]
 
+else:
+    wall = 0
+

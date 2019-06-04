@@ -5,7 +5,7 @@ from matplotlib.animation import FuncAnimation
 from matplotlib.colors import LinearSegmentedColormap, colorConverter
 
 from simulation_single import Simulation, minPressure, maxPressure, wall
-from simulation_multi import Simulation2
+from simulation_multi import Simulation2, wall
 
 matplotlib.use('Qt5Agg')
 import matplotlib.pyplot as plt
@@ -22,12 +22,11 @@ def animation_func_multi(i):
 
 if len(argv) > 1 and (argv[1] == '-h' or argv[1] == '--help'):
 	print("SYNOPSIS")
-	print("	python main.py [wall] [type]")
+	print("	python main.py [wall_option] [single | multi]")
 	print("")
-	print("	wall - opcja scian, dla single zakres 1-7, dla multi zakres 1-8")
-	print("	type - typ symulacji")
-	print("		[single] - jedno źródło ")
-	print("		[multi] - dwa źródła")
+	print("	[wall_option] - opcja scian, 1-7 (dla single), 1-8 (dla multi)")
+	print("	[single] - jedno źródło ")
+	print("	[multi] - dwa źródła")
 	print("DESCRIPTION")
 	print("	-h, --help ")
 	print("		Display this help and exit")

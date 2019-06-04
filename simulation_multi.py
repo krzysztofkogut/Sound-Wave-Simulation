@@ -15,7 +15,7 @@ xPosition = 3 * scale
 wallTop = 1 * scale
 wallTop1 = 2.5 * scale
 wallTop2 = 1.5 * scale
-wall_x_pos = 2 * scale
+wall_x_pos = 3 * scale
 wall_x_pos1 = 2.5 * scale
 wall_x_pos2 = 3.5 * scale
 radius = 1 * scale
@@ -114,6 +114,9 @@ elif argc > 1 and sys.argv[1] == '7':
 
 elif argc > 1 and sys.argv[1] == '8':
     wall = [[0 for x in range(size_x)] for y in range(size_y)]
+
+else:
+    wall = 0
 
 '''
 if argc > 1 and sys.argv[1] == '8':
