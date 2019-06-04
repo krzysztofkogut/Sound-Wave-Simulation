@@ -24,7 +24,7 @@ if len(argv) > 1 and (argv[1] == '-h' or argv[1] == '--help'):
 	print("SYNOPSIS")
 	print("	python main.py [wall_option] [single | multi]")
 	print("")
-	print("	[wall_option] - opcja scian, 1-7 (dla single), 1-8 (dla multi)")
+	print("	[wall_option] - opcja scian, 1-9 (dla single), 1-8 (dla multi)")
 	print("	[single] - jedno źródło ")
 	print("	[multi] - dwa źródła")
 	print("DESCRIPTION")
