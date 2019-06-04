@@ -118,8 +118,3 @@ elif argc > 1 and sys.argv[1] == '8':
 else:
     wall = 0
 
-'''
-if argc > 1 and sys.argv[1] == '8':
-    wall = [[1 if x == 3 * scale and (0 < y < yPosition - 1 or yPosition + 1 < y < size_y) else 0
-             for x in range(size_x)] for y in range(size_y)]
-'''
