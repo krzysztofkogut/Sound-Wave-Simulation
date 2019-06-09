@@ -41,7 +41,7 @@ class Simulation2:
         P = self.pressure
         for i in range(size_y):
             for j in range(size_x):
-                if wall[i][j] == 1:
+                if wall_multi[i][j] == 1:
                     V[i][j][0] = V[i][j][1] = V[i][j][2] = V[i][j][3] = 0.0
                     continue
                 cellPressure = P[i][j]
@@ -65,12 +65,12 @@ class Simulation2:
 
 argc = len(sys.argv)
 if argc > 1 and sys.argv[1] == '1':
-    wall = [[1 if x == wall_x_pos and wallTop < y < size_y else 0
+    wall_multi = [[1 if x == wall_x_pos and wallTop < y < size_y else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '2':
 
-    wall = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
+    wall_multi = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
                   (wall_x_pos - scale < x < wall_x_pos and
                    x - wall_x_pos == y - wallTop - scale - 1) or
                   (wall_x_pos < x < wall_x_pos + scale and
@@ -79,7 +79,7 @@ elif argc > 1 and sys.argv[1] == '2':
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '3':
-    wall = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
+    wall_multi = [[1 if (x == wall_x_pos and wallTop + scale < y < size_y) or
                   (wall_x_pos - scale < x < wall_x_pos and
                    x - wall_x_pos == y - wallTop - scale - 1) or
                   (wall_x_pos < x < wall_x_pos + scale and
@@ -92,29 +92,29 @@ elif argc > 1 and sys.argv[1] == '3':
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '4':
-    wall = [[1 if (x == wall_x_pos1 and wallTop1 < y < size_y) or (x == wall_x_pos2 and wallTop2 < y < size_y) else 0
+    wall_multi = [[1 if (x == wall_x_pos1 and wallTop1 < y < size_y) or (x == wall_x_pos2 and wallTop2 < y < size_y) else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '5':
-    wall = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (
+    wall_multi = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (
                 wallTop1 >= y >= wallTop2 and x == wall_x_pos2)) else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '6':
-    wall = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (
+    wall_multi = [[1 if ((wall_x_pos1 <= x <= wall_x_pos2 and (y == wallTop1 or y == wallTop2)) or (
                 wallTop1 >= y >= wallTop2 and (x == wall_x_pos1 or x == wall_x_pos2))) else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '7':
-    wall = [[1 if (2.5 * scale <= x <= 3 * scale and y == 2.5 * scale) or
+    wall_multi = [[1 if (2.5 * scale <= x <= 3 * scale and y == 2.5 * scale) or
                   (3 * scale <= x <= 3.5 * scale and y == 2 * scale) or
                   (2.5 * scale >= y >= 2 * scale and x == 3 * scale) or
                   (2 * scale >= y >= 1.5 * scale and x == 3.5 * scale) else 0
              for x in range(size_x)] for y in range(size_y)]
 
 elif argc > 1 and sys.argv[1] == '8':
-    wall = [[0 for x in range(size_x)] for y in range(size_y)]
+    wall_multi = [[0 for x in range(size_x)] for y in range(size_y)]
 
 else:
-    wall = 0
+    wall_multi = 0
 
