@@ -5,9 +5,9 @@
 \usepackage{latexsym}
 \author{KG, KK, PP}
 
-\title{Rozprzestrzenianie siê fali dŸwiêkowej po pomieszczeniu}
+\title{Rozprzestrzenianie siÄ™ fali dÅºwiÄ™kowej po pomieszczeniu}
 
-\author{Kacper Gawroñski \and Krzysztof Kogut \and Pawe³ Peroñczyk \\
+\author{Kacper GawroÅ„ski \and Krzysztof Kogut \and PaweÅ‚ PeroÅ„czyk \\
 		\small Informatyka, II rok \\
 		\small Rok akademicki 2018/19 \\
 		}
@@ -17,51 +17,53 @@
 
 \section{Wprowadzenie do tematu}
 
-Rozchodzenie siê dŸwiêku w pomieszczeniu zale¿y od jego wymiarów i kszta³tu oraz od struktury powierzchni ograniczaj¹cej pomieszczenia, jak te¿ od w³aœciwoœci akustycznych przedmiotów w niej siê znajduj¹cych (co pomijamy z uwagi na potrzeby symulacji). Wymienione czynniki maj¹ wp³yw na prêdkoœæ zanikania energii dŸwiêkowej w pomieszczeniu, co z kolei wp³ywa w sposób zasadniczy na wartoœæ poziomu dŸwiêku w nim panuj¹cego. 
+Rozchodzenie siÄ™ dÅºwiÄ™ku w pomieszczeniu zaleÅ¼y od jego wymiarÃ³w i ksztaÅ‚tu oraz od struktury powierzchni ograniczajÄ…cej pomieszczenia, jak teÅ¼ od wÅ‚aÅ›ciwoÅ›ci akustycznych przedmiotÃ³w w niej siÄ™ znajdujÄ…cych (co pomijamy z uwagi na potrzeby symulacji). Wymienione czynniki majÄ… wpÅ‚yw na prÄ™dkoÅ›Ä‡ zanikania energii dÅºwiÄ™kowej w pomieszczeniu, co z kolei wpÅ‚ywa w sposÃ³b zasadniczy na wartoÅ›Ä‡ poziomu dÅºwiÄ™ku w nim panujÄ…cego. 
 \\ \\
-Fale dŸwiêkowe rozchodz¹ce siê w pomieszczeniach natrafiaj¹c na przeszkody mog¹ siê od nich odbiæ. Te odbicia mog¹ mieæ charakter lustrzany (k¹t padania jest równy k¹towi odbicia) lub te¿ ³¹czyæ siê z rozproszeniem dŸwiêku (fala padaj¹ca pod okreœlonym k¹tem jest odbijana we wszystkich kierunkach). To, jaki charakter bêdzie mia³o odbicie zale¿y od relacji miêdzy d³ugoœci¹ fali a rozmiarami elementów rozpraszaj¹cych. W praktyce, ze wzglêdu na du¿y zakres d³ugoœci fal dŸwiêkowych (w zale¿noœci od czêstotliwoœci od 1,7 mm do 17 m), zwykle mamy do czynienia z odbiciem mieszanym – sk³adowe dŸwiêku o pewnych czêstotliwoœciach ulegaj¹ odbiciu z rozproszeniem a inne odbiciu lustrzanemu. 
+Fale dÅºwiÄ™kowe rozchodzÄ…ce siÄ™ w pomieszczeniach natrafiajÄ…c na przeszkody mogÄ… siÄ™ od nich odbiÄ‡. Te odbicia mogÄ… mieÄ‡ charakter lustrzany (kÄ…t padania jest rÃ³wny kÄ…towi odbicia) lub teÅ¼ Å‚Ä…czyÄ‡ siÄ™ z rozproszeniem dÅºwiÄ™ku (fala padajÄ…ca pod okreÅ›lonym kÄ…tem jest odbijana we wszystkich kierunkach). To, jaki charakter bÄ™dzie miaÅ‚o odbicie zaleÅ¼y od relacji miÄ™dzy dÅ‚ugoÅ›ciÄ… fali a rozmiarami elementÃ³w rozpraszajÄ…cych. W praktyce, ze wzglÄ™du na duÅ¼y zakres dÅ‚ugoÅ›ci fal dÅºwiÄ™kowych (w zaleÅ¼noÅ›ci od czÄ™stotliwoÅ›ci od 1,7 mm do 17 m), zwykle mamy do czynienia z odbiciem mieszanym â€“ skÅ‚adowe dÅºwiÄ™ku o pewnych czÄ™stotliwoÅ›ciach ulegajÄ… odbiciu z rozproszeniem a inne odbiciu lustrzanemu. 
 \\ \\
-Podczas rozchodzenia siê dŸwiêku w powietrzu nastêpuj¹ lokalne zmiany ciœnienia, polegaj¹ce na odchyleniach powy¿ej i poni¿ej normalnego ciœnienia atmosferycznego, czyli œciœniêciach i rozprê¿enia cz¹steczek powietrza. Zwyk³e zmiany ciœnienia atmosferycznego, np. zwi¹zane z pogod¹ lub wysokoœci¹, s¹ zbyt powolne, aby s³uch ludzki postrzega³ je jako dŸwiêki. Czêstotliwoœci poni¿ej oko³o 16-20 cykli na sekundê, czyli herców (1 Hz=1/s), s¹ dla cz³owieka nies³yszalne, choæ czasem ucho na nie reaguje. Te czêstotliwoœci to tzw. infradŸwiêki. Zakres czêstotliwoœci od oko³o 20 do oko³o 20000 Hz to czêstotliwoœci s³yszalne dla cz³owieka. Dok³adny zakres s³yszalnoœci jest ró¿ny dla ró¿nych osób. Czêstotliwoœci z zakresu s³yszalnoœci s¹ postrzegane jako dŸwiêk, maj¹cy okreœlon¹ wysokoœæ, czy te¿ charakter tonalny albo szumowy. Czêstotliwoœci powy¿ej 20 kHz nazywamy ultradŸwiêkami. 
+Podczas rozchodzenia siÄ™ dÅºwiÄ™ku w powietrzu nastÄ™pujÄ… lokalne zmiany ciÅ›nienia, polegajÄ…ce na odchyleniach powyÅ¼ej i poniÅ¼ej normalnego ciÅ›nienia atmosferycznego, czyli Å›ciÅ›niÄ™ciach i rozprÄ™Å¼enia czÄ…steczek powietrza. ZwykÅ‚e zmiany ciÅ›nienia atmosferycznego, np. zwiÄ…zane z pogodÄ… lub wysokoÅ›ciÄ…, sÄ… zbyt powolne, aby sÅ‚uch ludzki postrzegaÅ‚ je jako dÅºwiÄ™ki. CzÄ™stotliwoÅ›ci poniÅ¼ej okoÅ‚o 16-20 cykli na sekundÄ™, czyli hercÃ³w (1 Hz=1/s), sÄ… dla czÅ‚owieka niesÅ‚yszalne, choÄ‡ czasem ucho na nie reaguje. Te czÄ™stotliwoÅ›ci to tzw. infradÅºwiÄ™ki. Zakres czÄ™stotliwoÅ›ci od okoÅ‚o 20 do okoÅ‚o 20000 Hz to czÄ™stotliwoÅ›ci sÅ‚yszalne dla czÅ‚owieka. DokÅ‚adny zakres sÅ‚yszalnoÅ›ci jest rÃ³Å¼ny dla rÃ³Å¼nych osÃ³b. CzÄ™stotliwoÅ›ci z zakresu sÅ‚yszalnoÅ›ci sÄ… postrzegane jako dÅºwiÄ™k, majÄ…cy okreÅ›lonÄ… wysokoÅ›Ä‡, czy teÅ¼ charakter tonalny albo szumowy. CzÄ™stotliwoÅ›ci powyÅ¼ej 20 kHz nazywamy ultradÅºwiÄ™kami. 
 \\ \\
-Fala dŸwiêkowa wychodz¹ca ze Ÿród³a dŸwiêku s³abnie wraz ze wzrostem pokonanej odleg³oœci od Ÿród³a. Os³abienie to zale¿y od w³aœciwoœci kierunkowych Ÿród³a i od œrodowiska, w którym ta fala siê rozchodzi. Gdy Ÿród³o dŸwiêku jest ma³e w porównaniu z d³ugoœci¹ promieniowanej fali, dŸwiêk rozchodzi siê na zewn¹trz w formie sfery o promieniu rosn¹cym wraz z oddalaniem siê od Ÿród³a. Poniewa¿ energia dŸwiêku jest rozprowadzana równomiernie na powierzchni sfery, intensywnoœæ dŸwiêku jest proporcjonalna do odleg³oœci od Ÿród³a zgodnie z zale¿noœci¹:
+Fala dÅºwiÄ™kowa wychodzÄ…ca ze ÅºrÃ³dÅ‚a dÅºwiÄ™ku sÅ‚abnie wraz ze wzrostem pokonanej odlegÅ‚oÅ›ci od ÅºrÃ³dÅ‚a. OsÅ‚abienie to zaleÅ¼y od wÅ‚aÅ›ciwoÅ›ci kierunkowych ÅºrÃ³dÅ‚a i od Å›rodowiska, w ktÃ³rym ta fala siÄ™ rozchodzi. Gdy ÅºrÃ³dÅ‚o dÅºwiÄ™ku jest maÅ‚e w porÃ³wnaniu z dÅ‚ugoÅ›ciÄ… promieniowanej fali, dÅºwiÄ™k rozchodzi siÄ™ na zewnÄ…trz w formie sfery o promieniu rosnÄ…cym wraz z oddalaniem siÄ™ od ÅºrÃ³dÅ‚a. PoniewaÅ¼ energia dÅºwiÄ™ku jest rozprowadzana rÃ³wnomiernie na powierzchni sfery, intensywnoÅ›Ä‡ dÅºwiÄ™ku jest proporcjonalna do odlegÅ‚oÅ›ci od ÅºrÃ³dÅ‚a zgodnie z zaleÅ¼noÅ›ciÄ…:
 
 \begin{center}
 $\frac{I_{1}}{I_{2}} = \frac{r_{2}^{2}}{r_{1}^{2}}$
 \end{center}
 
-gdzie $r_{1}, r_{2}$ - odleg³oœci od Ÿród³a dŸwiêku, $I_{1}, I_{2}$ - intensywnoœæ dŸwiêku w odleg³oœci odpowiednio: $r_{1}$ i $r_{2}$. Odpowiada to zmniejszeniu poziomu o 6 dB przy podwojeniu odleg³oœci. 
+gdzie $r_{1}, r_{2}$ - odlegÅ‚oÅ›ci od ÅºrÃ³dÅ‚a dÅºwiÄ™ku, $I_{1}, I_{2}$ - intensywnoÅ›Ä‡ dÅºwiÄ™ku w odlegÅ‚oÅ›ci odpowiednio: $r_{1}$ i $r_{2}$. Odpowiada to zmniejszeniu poziomu o 6 dB przy podwojeniu odlegÅ‚oÅ›ci. 
 \\ \\
-Wynika to z niezak³óconego, przestrzennego rozproszenia energii dŸwiêkowej. We wnêtrzach jest nieco inaczej. Poziom dŸwiêku opada w podobnym tempie w najbli¿szym otoczeniu Ÿród³a, tam gdzie dominuje dŸwiêk bezpoœredni tego Ÿród³a (czyli w tzw. polu bezpoœrednim). Pozosta³a przestrzeñ w pomieszczeniu jest tzw. polem pog³osowym, gdzie dominuj¹ dŸwiêki odbite. Poziom dŸwiêku w polu pog³osowym wszêdzie jest taki sam lub bardzo zbli¿ony. St¹d zanik przestrzenny dŸwiêku w pomieszczeniach jest zwykle du¿o s³abszy ni¿ w przestrzeni otwartej.
+Wynika to z niezakÅ‚Ã³conego, przestrzennego rozproszenia energii dÅºwiÄ™kowej. We wnÄ™trzach jest nieco inaczej. Poziom dÅºwiÄ™ku opada w podobnym tempie w najbliÅ¼szym otoczeniu ÅºrÃ³dÅ‚a, tam gdzie dominuje dÅºwiÄ™k bezpoÅ›redni tego ÅºrÃ³dÅ‚a (czyli w tzw. polu bezpoÅ›rednim). PozostaÅ‚a przestrzeÅ„ w pomieszczeniu jest tzw. polem pogÅ‚osowym, gdzie dominujÄ… dÅºwiÄ™ki odbite. Poziom dÅºwiÄ™ku w polu pogÅ‚osowym wszÄ™dzie jest taki sam lub bardzo zbliÅ¼ony. StÄ…d zanik przestrzenny dÅºwiÄ™ku w pomieszczeniach jest zwykle duÅ¼o sÅ‚abszy niÅ¼ w przestrzeni otwartej.
 \\ \\
 
-\section{Przegl¹d literatury}
+\section{PrzeglÄ…d literatury}
 
-Istnieje wiele mo¿liwoœci badania rozchodzenia siê fal dŸwiêkowych. Pocz¹wszy od rzeczywistych przyrz¹dów stworzonych w celach naukowych do generowania dŸwiêku, przez przedmioty codziennego u¿ytku, a¿ po aplikacje internetowe lub na telefon.
+Istnieje wiele moÅ¼liwoÅ›ci badania rozchodzenia siÄ™ fal dÅºwiÄ™kowych. PoczÄ…wszy od rzeczywistych przyrzÄ…dÃ³w stworzonych w celach naukowych do generowania dÅºwiÄ™ku, przez przedmioty codziennego uÅ¼ytku, aÅ¼ po aplikacje internetowe lub na telefon.
 \\ \\ 
-Jednym ze sposobów mierzenia rozchodzenia siê dŸwiêku jest wykorzystanie obrabiarki \footnote{\textit{Badania w³asnoœci obrabiarek i stosowane kryteria oceny} dr in¿ Wac³aw Skoczyñski, Przegl¹d Mechaniczny, 2003} generuj¹cej dŸwiêk o du¿ym natê¿eniu. Umieszczona w pomieszczeniu, w którym znajduje siê swobodne pole akustyczne, a w³asnoœci akustyczne pod³o¿a s¹ jednakowe (lub bardzo zbli¿one) na powierzchni ograniczonej po³o¿eniem punktów pomiarowych i pozwalaj¹cych traktowanie ich jako odbijaj¹cych ha³as. Punkty pomiarowe s¹ rozmieszczone na powierzchniach prostopad³oœcianu, którego œciany otaczaj¹ obrabiarkê (lub tê jej czêœæ, któr¹ mo¿na uznaæ za g³ówne Ÿród³o dŸwiêku) w odleg³oœci 1 - 1,5 m. W ka¿dym punkcie pomiarowym ustawiamy mikrofon bezpoœrednio w stronê Ÿród³a dŸwiêku i wykonujemy pomiar.
+Jednym ze sposobÃ³w mierzenia rozchodzenia siÄ™ dÅºwiÄ™ku jest wykorzystanie obrabiarki \footnote{\textit{Badania wÅ‚asnoÅ›ci obrabiarek i stosowane kryteria oceny} dr inÅ¼ WacÅ‚aw SkoczyÅ„ski, PrzeglÄ…d Mechaniczny, 2003} generujÄ…cej dÅºwiÄ™k o duÅ¼ym natÄ™Å¼eniu. Umieszczona w pomieszczeniu, w ktÃ³rym znajduje siÄ™ swobodne pole akustyczne, a wÅ‚asnoÅ›ci akustyczne podÅ‚oÅ¼a sÄ… jednakowe (lub bardzo zbliÅ¼one) na powierzchni ograniczonej poÅ‚oÅ¼eniem punktÃ³w pomiarowych i pozwalajÄ…cych traktowanie ich jako odbijajÄ…cych haÅ‚as. Punkty pomiarowe sÄ… rozmieszczone na powierzchniach prostopadÅ‚oÅ›cianu, ktÃ³rego Å›ciany otaczajÄ… obrabiarkÄ™ (lub tÄ™ jej czÄ™Å›Ä‡, ktÃ³rÄ… moÅ¼na uznaÄ‡ za gÅ‚Ã³wne ÅºrÃ³dÅ‚o dÅºwiÄ™ku) w odlegÅ‚oÅ›ci 1 - 1,5 m. W kaÅ¼dym punkcie pomiarowym ustawiamy mikrofon bezpoÅ›rednio w stronÄ™ ÅºrÃ³dÅ‚a dÅºwiÄ™ku i wykonujemy pomiar.
 \\ \\
-W dzisiejszych czasach mamy jednak do czynienia w wiêkszoœci z aplikacjami internetowymi lub na telefony komórkowe, które s³u¿¹ do pomiaru dŸwiêku. \footnote{\textit{Miernik dŸwiêku (Sound Meter)} Abc Apps} Aplikacja \textit{Sound Meter} wykorzystuje mikrofony w urz¹dzeniach z systemem Android do wychwytywania dŸwiêku z otoczenia i mierzenia jego natê¿enia. Miernik ten mo¿e byæ wykorzystany podczas badania postawionego wy¿ej problemu rozchodzenia siê fali dŸwiêkowej. Wystarczy obraæ konkretn¹ odleg³oœæ Ÿród³a dŸwiêku od telefonu z aplikacj¹. Trzeba jednak dopilnowaæ, aby na drodze fali dŸwiêkowej, któr¹ zamierzamy wys³aæ nie pojawi³a siê ¿adna przeszkoda - doprowadzi ona do zniekszta³cenia fali i b³êdnych wyników. Trzeba wzi¹æ pod uwagê fakt, ¿e mikrofony dostêpne w urz¹dzeniach komórkowych s¹ ograniczone i dostosowane do natê¿enia dŸwiêku o wartoœci 0 - 100 dB. Ka¿da wartoœæ wychodz¹ca poza ten przedzia³ nie bêdzie rozpoznana i nie otrzymamy po¿¹danego wyniku.
+W dzisiejszych czasach mamy jednak do czynienia w wiÄ™kszoÅ›ci z aplikacjami internetowymi lub na telefony komÃ³rkowe, ktÃ³re sÅ‚uÅ¼Ä… do pomiaru dÅºwiÄ™ku. \footnote{\textit{Miernik dÅºwiÄ™ku (Sound Meter)} Abc Apps} Aplikacja \textit{Sound Meter} wykorzystuje mikrofony w urzÄ…dzeniach z systemem Android do wychwytywania dÅºwiÄ™ku z otoczenia i mierzenia jego natÄ™Å¼enia. Miernik ten moÅ¼e byÄ‡ wykorzystany podczas badania postawionego wyÅ¼ej problemu rozchodzenia siÄ™ fali dÅºwiÄ™kowej. Wystarczy obraÄ‡ konkretnÄ… odlegÅ‚oÅ›Ä‡ ÅºrÃ³dÅ‚a dÅºwiÄ™ku od telefonu z aplikacjÄ…. Trzeba jednak dopilnowaÄ‡, aby na drodze fali dÅºwiÄ™kowej, ktÃ³rÄ… zamierzamy wysÅ‚aÄ‡ nie pojawiÅ‚a siÄ™ Å¼adna przeszkoda - doprowadzi ona do znieksztaÅ‚cenia fali i bÅ‚Ä™dnych wynikÃ³w. Trzeba wziÄ…Ä‡ pod uwagÄ™ fakt, Å¼e mikrofony dostÄ™pne w urzÄ…dzeniach komÃ³rkowych sÄ… ograniczone i dostosowane do natÄ™Å¼enia dÅºwiÄ™ku o wartoÅ›ci 0 - 100 dB. KaÅ¼da wartoÅ›Ä‡ wychodzÄ…ca poza ten przedziaÅ‚ nie bÄ™dzie rozpoznana i nie otrzymamy poÅ¼Ä…danego wyniku.
 \\ \\
-Istnieje równie¿ wiele symulatorów akustycznych pomieszczeñ \footnote{\textit{Soundtracing w grach komputerowych} Bugiel P. Kraków, 2013}, wykorzystuj¹cych œrodowisko programu MATLAB. Pozwala to na bardzo dok³adne zasymulowanie zjawiska wraz z czynnikami takimi jak poch³anianie dŸwiêku przez atmosferê \footnote{\textit{Wibroakustyka stosowana.} Cempel C. Warszawa, PWN 1989}, pokrycie materia³em pod³ogi pomieszczenia, czy spadek ciœnienia wraz z odleg³oœci¹ od Ÿród³a \footnote{\textit{DŸwiêki i fale.} Makarewicz R. Poznañ, Wydawnictwo Naukowe UAM 2004}. Gotowy symulator generuje odpowiedzi impulsowe pomieszczenia bior¹c pod uwagê najwa¿niejsze zjawiska zachodz¹ce w czasie propagacji dŸwiêku. Ograniczeniem w tych symulacjach jest czêstotliwoœæ próbkowania, która musi byæ taka sama lub bardzo zbli¿ona do tej zadanej jako argument symulatora.
+Istnieje rÃ³wnieÅ¼ wiele symulatorÃ³w akustycznych pomieszczeÅ„ \footnote{\textit{Soundtracing w grach komputerowych} Bugiel P. KrakÃ³w, 2013}, wykorzystujÄ…cych Å›rodowisko programu MATLAB. Pozwala to na bardzo dokÅ‚adne zasymulowanie zjawiska wraz z czynnikami takimi jak pochÅ‚anianie dÅºwiÄ™ku przez atmosferÄ™ \footnote{\textit{Wibroakustyka stosowana.} Cempel C. Warszawa, PWN 1989}, pokrycie materiaÅ‚em podÅ‚ogi pomieszczenia, czy spadek ciÅ›nienia wraz z odlegÅ‚oÅ›ciÄ… od ÅºrÃ³dÅ‚a \footnote{\textit{DÅºwiÄ™ki i fale.} Makarewicz R. PoznaÅ„, Wydawnictwo Naukowe UAM 2004}. Gotowy symulator generuje odpowiedzi impulsowe pomieszczenia biorÄ…c pod uwagÄ™ najwaÅ¼niejsze zjawiska zachodzÄ…ce w czasie propagacji dÅºwiÄ™ku. Ograniczeniem w tych symulacjach jest czÄ™stotliwoÅ›Ä‡ prÃ³bkowania, ktÃ³ra musi byÄ‡ taka sama lub bardzo zbliÅ¼ona do tej zadanej jako argument symulatora.
 \\ \\
-W œrodowisku naukowym popularna okazuje siê byæ metoda FDTD \footnote{\textit{Application of finite difference time domain (FDTD) simulations in engineering education in optics and electrodynamic} Krawszewski M. Politechnika Gdañska, 2013}(Finite Difference Time Domain) - czyli metoda rozwi¹zywania równañ Maxwella w dziedzinie czasu za pomoc¹ ró¿nic skoñczonych. Symulacje metod¹ FDTD znalaz³y zastosowanie w omawianiu takich zagadnieñ jak rozpraszanie œwiat³a, interferencja oraz dyfrakcja fal \footnote{\textit{Efficient and Accurate Sound Propagation
-Using Adaptive Rectangular Decomposition} Nikunj Raghuvanshi, Rahul Narain, Ming C. Lin, 2009} dŸwiêkowych. Jest to prosta w implementacji metoda daj¹ca mo¿liwoœæ wizualizacji przebiegu zjawisk fizycznych zarówno tych wymienionych wczeœniej jak i wielu innych.
+W Å›rodowisku naukowym popularna okazuje siÄ™ byÄ‡ metoda FDTD \footnote{\textit{Application of finite difference time domain (FDTD) simulations in engineering education in optics and electrodynamic} Krawszewski M. Politechnika GdaÅ„ska, 2013}(Finite Difference Time Domain) - czyli metoda rozwiÄ…zywania rÃ³wnaÅ„ Maxwella w dziedzinie czasu za pomocÄ… rÃ³Å¼nic skoÅ„czonych. Symulacje metodÄ… FDTD znalazÅ‚y zastosowanie w omawianiu takich zagadnieÅ„ jak rozpraszanie Å›wiatÅ‚a, interferencja oraz dyfrakcja fal \footnote{\textit{Efficient and Accurate Sound Propagation
+Using Adaptive Rectangular Decomposition} Nikunj Raghuvanshi, Rahul Narain, Ming C. Lin, 2009} dÅºwiÄ™kowych. Jest to prosta w implementacji metoda dajÄ…ca moÅ¼liwoÅ›Ä‡ wizualizacji przebiegu zjawisk fizycznych zarÃ³wno tych wymienionych wczeÅ›niej jak i wielu innych.
 \\ \\
-Innym modelem rozwi¹zania tego problemu jest metoda wymagaj¹ca zastosowania numerycznej symulacji wykorzystuj¹cej FSI(Fluid Structure Interaction) \footnote{\textit{Acoustic Intensity Imaging Methods for in-situ Wave Propagation} Stefan Weyna Zachodniopomorski Uniwersytet Technologiczny, Szczecin 2010}. Modelowanie t¹ metod¹ wymaga zarówno reprezentacji strukturalnej cieczy, tudzie¿ powietrza oraz zwi¹zków pomiêdzy cz¹steczkami. Jest to bardzo trudna metoda w zastosowaniu, wymagaj¹ca du¿ej precyzji w opisach matematycznych, jednak¿e jest to metoda daj¹ca bardzo dok³adne i zbli¿one do rzeczywistoœci wyniki. 
+Innym modelem rozwiÄ…zania tego problemu jest metoda wymagajÄ…ca zastosowania numerycznej symulacji wykorzystujÄ…cej FSI(Fluid Structure Interaction) \footnote{\textit{Acoustic Intensity Imaging Methods for in-situ Wave Propagation} Stefan Weyna Zachodniopomorski Uniwersytet Technologiczny, Szczecin 2010}. Modelowanie tÄ… metodÄ… wymaga zarÃ³wno reprezentacji strukturalnej cieczy, tudzieÅ¼ powietrza oraz zwiÄ…zkÃ³w pomiÄ™dzy czÄ…steczkami. Jest to bardzo trudna metoda w zastosowaniu, wymagajÄ…ca duÅ¼ej precyzji w opisach matematycznych, jednakÅ¼e jest to metoda dajÄ…ca bardzo dokÅ‚adne i zbliÅ¼one do rzeczywistoÅ›ci wyniki. 
 \\
 
 \section{Proponowany model}
 
-W swojej symulacji wykorzystaliœmy zasadê dzia³ania automatów komórkowych \footnote{\textit{Visualization of sound propagation and scattering in rooms} Takatoshi Yokota, Shinichi Sakamoto, Hideki Tachibana}. Symulacja propagacji fali dŸwiêkowej przeprowadzona zosta³a poprzez stany komórek oraz ich interakcjê z s¹siednimi komórkami. Ka¿da komórka stanowi osobny obiekt, a atrybuty kolejno oddalonych od Ÿród³a komórek s¹ obliczane na podstawie s¹siednich komórek - po to aby pomiary by³y obarczone jak najmniejszym b³êdem zwi¹zanym z ich predykcj¹ u Ÿród³a dŸwiêku. 
+W swojej symulacji wykorzystaliÅ›my zasadÄ™ dziaÅ‚ania automatÃ³w komÃ³rkowych \footnote{\textit{Visualization of sound propagation and scattering in rooms} Takatoshi Yokota, Shinichi Sakamoto, Hideki Tachibana}. Symulacja propagacji fali dÅºwiÄ™kowej przeprowadzona zostaÅ‚a poprzez stany komÃ³rek oraz ich interakcjÄ™ z sÄ…siednimi komÃ³rkami. KaÅ¼da komÃ³rka stanowi osobny obiekt, a atrybuty kolejno oddalonych od ÅºrÃ³dÅ‚a komÃ³rek sÄ… obliczane na podstawie sÄ…siednich komÃ³rek - po to aby pomiary byÅ‚y obarczone jak najmniejszym bÅ‚Ä™dem zwiÄ…zanym z ich predykcjÄ… u ÅºrÃ³dÅ‚a dÅºwiÄ™ku. 
 \\
 
 \section{Symulacja zjawiska}
 
-Idea operacji wykonywanych na komórkach jest bardzo prosta, ka¿da komórka zawiera informacja o obecnej wartoœci ciœnienia oraz natê¿eniu przep³ywu powietrza. W ka¿dym kolejnym kroku symulacji obliczamy nowe wartoœci ciœnienia oraz natê¿enia przep³ywu powietrza bazuj¹c na poprzednich wartoœciach.
+Nasza symulacja zostaÅ‚a wykonana w jÄ™zyku programowania - Pythonie z wykorzystaniem bibliotek: Matplotlib i Numpy. 
 \\ \\
-Symulacjê przeprowadzamy w œrodowisku 2D. Pierwszym krokiem jest obliczenie pocz¹tkowego p³ywu powietrza dla wszystkich komórek - przy jednoczesnej znajomoœci ró¿nicy ciœnieñ. Obliczamy prêdkoœæ przep³ywu powietrza w ka¿dej komórce na podstawie ró¿nicy wartoœci ciœnieñ panuj¹cymi pomiêdzy komórk¹ i jej s¹siadami.
+Idea operacji wykonywanych na komÃ³rkach jest bardzo prosta, kaÅ¼da komÃ³rka zawiera informacja o obecnej wartoÅ›ci ciÅ›nienia oraz natÄ™Å¼eniu przepÅ‚ywu powietrza. W kaÅ¼dym kolejnym kroku symulacji obliczamy nowe wartoÅ›ci ciÅ›nienia oraz natÄ™Å¼enia przepÅ‚ywu powietrza bazujÄ…c na poprzednich wartoÅ›ciach.
 \\ \\
-U¿ywaj¹c okreœlenia wp³yw/wyp³yw powietrza mówimy tutaj o parametrach powietrza w momencie wkraczania/wychodzenia z konkretnej komórki, czyli przep³yw powietrza, tzw. flow to przedstawienie powietrza jako okreœlonych co do wartoœci atrybutów, w tym wypadku - ciœnienie i prêdkoœæ.
+SymulacjÄ™ przeprowadzamy w Å›rodowisku 2D. Pierwszym krokiem jest obliczenie poczÄ…tkowego pÅ‚ywu powietrza dla wszystkich komÃ³rek - przy jednoczesnej znajomoÅ›ci rÃ³Å¼nicy ciÅ›nieÅ„. Obliczamy prÄ™dkoÅ›Ä‡ przepÅ‚ywu powietrza w kaÅ¼dej komÃ³rce na podstawie rÃ³Å¼nicy wartoÅ›ci ciÅ›nieÅ„ panujÄ…cymi pomiÄ™dzy komÃ³rkÄ… i jej sÄ…siadami.
+\\ \\
+UÅ¼ywajÄ…c okreÅ›lenia wpÅ‚yw/wypÅ‚yw powietrza mÃ³wimy tutaj o parametrach powietrza w momencie wkraczania/wychodzenia z konkretnej komÃ³rki, czyli przepÅ‚yw powietrza, tzw. flow to przedstawienie powietrza jako okreÅ›lonych co do wartoÅ›ci atrybutÃ³w, w tym wypadku - ciÅ›nienie i prÄ™dkoÅ›Ä‡.
 
 \begin{verbatim}
 for i in range(size_y):
@@ -88,7 +90,7 @@ for i in range(size_y):
     else cellPressure
 \end{verbatim}
 
-Nastêpnie symulujemy ju¿ przep³yw, czyli aktualizujemy ciœnienie bior¹c pod uwagê równie¿ prêdkoœæ wyp³ywu powietrza(outflow velocity):
+NastÄ™pnie symulujemy juÅ¼ przepÅ‚yw, czyli aktualizujemy ciÅ›nienie biorÄ…c pod uwagÄ™ rÃ³wnieÅ¼ prÄ™dkoÅ›Ä‡ wypÅ‚ywu powietrza(outflow velocity):
 
 \begin{verbatim}
 for i in range(size_y):
@@ -97,23 +99,23 @@ for i in range(size_y):
     self.pressure[i][j] -= 0.5 * damping * sum(self.velocities[i][j])
 \end{verbatim}
 
-¯eby przeprowadziæ symulacjê nale¿y ustawiæ poni¿sze parametry: 
+Å»eby przeprowadziÄ‡ symulacjÄ™ naleÅ¼y ustawiÄ‡ poniÅ¼sze parametry: 
 \begin{itemize}
 \item scale(skala)
-\item damping(t³umienie)
-\item omega(parametr u¿ywany przy obliczaniu falowego sygna³u Ÿród³a)
-\item startPressure(ciœnienie pocz¹tkowe)
-\item yPosition(wspó³rzêdna Y Ÿród³a)
-\item xPosition(wspó³rzêdna X Ÿród³a)\\
+\item damping(tÅ‚umienie)
+\item omega(parametr uÅ¼ywany przy obliczaniu falowego sygnaÅ‚u ÅºrÃ³dÅ‚a)
+\item startPressure(ciÅ›nienie poczÄ…tkowe)
+\item yPosition(wspÃ³Å‚rzÄ™dna Y ÅºrÃ³dÅ‚a)
+\item xPosition(wspÃ³Å‚rzÄ™dna X ÅºrÃ³dÅ‚a)\\
 \end{itemize}
 
-Nastêpnie w wywo³aæ przy pomocy poni¿szego kodu w linii komend: \\
+NastÄ™pnie w wywoÅ‚aÄ‡ przy pomocy poniÅ¼szego kodu w linii komend: \\
 
 \begin{verbatim}
 python main.py [wall_option] [single | multi]
 \end{verbatim}
 
-\hspace{1.5cm} gdzie: \textbf{wall\_option} -- oznacza liczbê 1--9 (single) lub 1--8 (multi)
+\hspace{1.5cm} gdzie: \textbf{wall\_option} -- oznacza liczbÄ™ 1--9 (single) lub 1--8 (multi)
 
 \begin{center}
 \emph{lub}
@@ -129,34 +131,34 @@ python main.py [-h | --help]
 
 \section{Wyniki symulacji}
 
-Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji.
+PoniÅ¼ej przedstawione zostaÅ‚y rÃ³Å¼ne wyniki symulacji.
 
 \newpage
 
 
 \begin{figure}
 \includegraphics[scale=0.43]{no1.png}
-\caption{Swobodne rozchodzenie siê fali z jednym Ÿród³em}
+\caption{Swobodne rozchodzenie siÄ™ fali z jednym ÅºrÃ³dÅ‚em}
 \end{figure}
 
 \begin{figure}
 \includegraphics[scale=0.43]{no2.png}
-\caption{Fala dŸwiêkowa ze Ÿród³em na zewn¹trz przeszkody}
+\caption{Fala dÅºwiÄ™kowa ze ÅºrÃ³dÅ‚em na zewnÄ…trz przeszkody}
 \end{figure}
 
 \begin{figure}
 \includegraphics[scale=0.43]{no3.png}
-\caption{Fala dŸwiêkowa ze Ÿród³em wewn¹trz przeszkody}
+\caption{Fala dÅºwiÄ™kowa ze ÅºrÃ³dÅ‚em wewnÄ…trz przeszkody}
 \end{figure}
 
 \begin{figure}
 \includegraphics[scale=0.43]{no4.png}
-\caption{Dwa Ÿród³a fal dŸwiêkowych nachodz¹cych na siebie}
+\caption{Dwa ÅºrÃ³dÅ‚a fal dÅºwiÄ™kowych nachodzÄ…cych na siebie}
 \end{figure}
 
 \begin{figure}
 \includegraphics[scale=0.55]{no5.png}
-\caption{Zjawisko dyfrakcji(ugiêcia) fali dŸwiêkowej zachodz¹ce przy przejœciu przez szczelinê}
+\caption{Zjawisko dyfrakcji(ugiÄ™cia) fali dÅºwiÄ™kowej zachodzÄ…ce przy przejÅ›ciu przez szczelinÄ™}
 \end{figure}
 
 
@@ -164,7 +166,7 @@ Poni¿ej przedstawione zosta³y ró¿ne wyniki symulacji.
 \begin{figure}
 \section{Wnioski}
 
-Problem symulacji fali dŸwiêkowej ma szereg rozwi¹zañ bardziej lub mniej dok³adnych. Pierwszym krokiem do rozwi¹zania tego problemu jest okreœlenie do jakich celów ma s³u¿yæ symulacja. Je¿eli problem ma pod³o¿e naukowe powinno siê zastosowaæ bardziej dok³adne i czasoch³onne metody, które nie tyle ukazuj¹ nam sam obraz, ale szereg dzia³añ i zale¿noœci zachodz¹cych podczas propagacji fali dŸwiêkowej. Natomiast zobrazowanie fali dŸwiêkowej na potrzeby zobrazowania samego w sobie nie wymaga bardzo dok³adnych metod obliczeniowych. Bior¹c pod uwagê symulacje, które zosta³y przeprowadzone i te zaprezentowane na powy¿szych ilustracjach mo¿na œmia³o stwierdziæ, ¿e rozwi¹zanie problemu zaproponowanym przez nas algorytmem jest wystarczaj¹co dok³adne i wiarygodne, co potwierdza fakt wystêpowania zjawisk dyfrakcji i interferencji fali dŸwiêkowej - co oddaje rzeczywisty obraz dŸwiêku w przestrzeni.
+Problem symulacji fali dÅºwiÄ™kowej ma szereg rozwiÄ…zaÅ„ bardziej lub mniej dokÅ‚adnych. Pierwszym krokiem do rozwiÄ…zania tego problemu jest okreÅ›lenie do jakich celÃ³w ma sÅ‚uÅ¼yÄ‡ symulacja. JeÅ¼eli problem ma podÅ‚oÅ¼e naukowe powinno siÄ™ zastosowaÄ‡ bardziej dokÅ‚adne i czasochÅ‚onne metody, ktÃ³re nie tyle ukazujÄ… nam sam obraz, ale szereg dziaÅ‚aÅ„ i zaleÅ¼noÅ›ci zachodzÄ…cych podczas propagacji fali dÅºwiÄ™kowej. Natomiast zobrazowanie fali dÅºwiÄ™kowej na potrzeby zobrazowania samego w sobie nie wymaga bardzo dokÅ‚adnych metod obliczeniowych. BiorÄ…c pod uwagÄ™ symulacje, ktÃ³re zostaÅ‚y przeprowadzone i te zaprezentowane na powyÅ¼szych ilustracjach moÅ¼na Å›miaÅ‚o stwierdziÄ‡, Å¼e rozwiÄ…zanie problemu zaproponowanym przez nas algorytmem jest wystarczajÄ…co dokÅ‚adne i wiarygodne, co potwierdza fakt wystÄ™powania zjawisk dyfrakcji i interferencji fali dÅºwiÄ™kowej - co oddaje rzeczywisty obraz dÅºwiÄ™ku w przestrzeni.
 
 \end{figure}
 
