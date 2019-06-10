@@ -45,8 +45,8 @@ elif len(argv) > 2 and argv[2] == 'single':
 	figure = plt.figure()
 	ca_plot_single = plt.imshow(simulation_single.pressure, cmap='seismic', interpolation='bilinear',
 								vmin=minPressure, vmax=maxPressure)
-	plt.ylabel("Położenie y[cells]")
-	plt.xlabel("Położenie x[cells]")
+	plt.ylabel("Location y[cells]")
+	plt.xlabel("Location x[cells]")
 	cbar = plt.colorbar(ca_plot_single)
 	cbar.set_label("Amplitude")
 	transparent = colorConverter.to_rgba('black', alpha=0)
@@ -74,8 +74,8 @@ elif len(argv) > 2 and argv[2] == "multi":
 	figure = plt.figure()
 	ca_plot_multi = plt.imshow(simulation_multi.pressure, cmap='seismic', interpolation='bilinear',
 							   vmin=minPressure, vmax=maxPressure)
-	plt.ylabel("Położenie y[cells]")
-	plt.xlabel("Położenie x[cells]")
+	plt.ylabel("Location y[cells]")
+	plt.xlabel("Location x[cells]")
 	cbar = plt.colorbar(ca_plot_multi)
 	cbar.set_label("Amplitude")
 	transparent = colorConverter.to_rgba('black', alpha=0)
